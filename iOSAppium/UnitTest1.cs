@@ -42,9 +42,10 @@ namespace AppuimiOS
             //Открыть приложение СГК
             _driver.FindElementByAccessibilityId("СГК Тестовая").Click();
             //Выбрать город
-            _driver.FindElementByAccessibilityId("Выберите город").Click();
+            Thread.Sleep(3000);
+            _driver.FindElementByXPath("//XCUIElementTypeStaticText[@name=\"Выберите город\"]").Click();
             //Выбрать Красноярск
-            _driver.FindElementByAccessibilityId("Красноярск").Click();
+            _driver.FindElementByXPath("//XCUIElementTypeButton[@name=\"Красноярск\"]").Click();
             //Авторизация логин
             _driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeTextField").Click();
             _driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeTextField").Clear();
@@ -54,7 +55,7 @@ namespace AppuimiOS
             _driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeSecureTextField").Clear();
             _driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeSecureTextField").SendKeys("1111");
             //Скрыть клавиатуру
-            //_driver.HideKeyboard();
+            _driver.HideKeyboard();
             //Войти
             _driver.FindElementByXPath("//XCUIElementTypeStaticText[@name=\"Вход\"]").Click();
             Assert.AreEqual("Счета", _driver.FindElementByXPath("//XCUIElementTypeStaticText[@name=\"Счета\"]").GetAttribute("name"));
