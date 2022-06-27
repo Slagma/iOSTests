@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
+using OpenQA.Selenium.Appium.iOS;
 using OpenQA.Selenium.Interactions;
 using System;
 using System.Threading;
@@ -12,7 +13,7 @@ namespace AppuimiOS
     public class Tests
     {
 
-        private AppiumDriver<AndroidElement> _driver;
+        private IOSDriver<IOSElement> _driver;
 
         [SetUp]
         public void Setup()
@@ -28,7 +29,7 @@ namespace AppuimiOS
                 //driverOption.AddAdditionalCapability(MobileCapabilityType.App, @"D:\Donwloads\SGC-test.apk");
 
 
-                _driver = new AndroidDriver<AndroidElement>(new Uri("http://localhost:4723/wd/hub"), driverOption, TimeSpan.FromSeconds(400));
+                _driver = new IOSDriver<IOSElement>(new Uri("http://localhost:4723/wd/hub"), driverOption, TimeSpan.FromSeconds(400));
                 //_driver = new AndroidDriver<AndroidElement>(new Uri("http://selenosis.epp.sibgenco.local/wd/hu"), driverOption, TimeSpan.FromSeconds(400));
 
                 _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
