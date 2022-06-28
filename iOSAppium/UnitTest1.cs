@@ -42,8 +42,8 @@ namespace AppuimiOS
             //Открыть приложение СГК
             _driver.FindElementByAccessibilityId("СГК Тестовая").Click();
             //Выбрать город
-            Thread.Sleep(3000);
-            _driver.FindElementByXPath("//XCUIElementTypeStaticText[@name=\"Выберите город\"]").Click();
+            Thread.Sleep(1500);
+            _driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeButton[1]").Click();
             //Выбрать Красноярск
             _driver.FindElementByXPath("//XCUIElementTypeButton[@name=\"Красноярск\"]").Click();
             //Авторизация логин
@@ -58,67 +58,88 @@ namespace AppuimiOS
             _driver.HideKeyboard();
             //Войти
             _driver.FindElementByXPath("//XCUIElementTypeStaticText[@name=\"Вход\"]").Click();
-            Assert.AreEqual("Счета", _driver.FindElementByXPath("//XCUIElementTypeStaticText[@name=\"Счета\"]").GetAttribute("name"));
+            //Assert.AreEqual("Счета", _driver.FindElementByXPath("//XCUIElementTypeStaticText[@name=\"Счета\"]").GetAttribute("name"));            
         }
 
-        //[Test]
-        //public void SGK_11_LicSchet()
-        //{
-        //    _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[2]").Click();
-        //    _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[1]").Click();
-        //    //Выбрал лицевой счет
-        //    _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.ScrollView/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[1]").Click();
-        //    Assert.AreEqual("Лицевой счёт", _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView").GetAttribute("text"));
-        //}
-        //[Test]
-        //public void SGK_12_DetailLicSchet()
-        //{
-        //    //Детализация ЛС
-        //    _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.Button").Click();
-        //    Assert.AreEqual("Детализация счёта", _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.TextView").GetAttribute("text"));
-        //}
-        //[Test]
-        //public void SGK_13_DetailPeriodLeft()
-        //{
-        //    //Выбор начала периода 
-        //    _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.Button[1]").Click();
-        //    Thread.Sleep(300);
-        //    _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[8]").Click();
-        //    _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]").Click();
-        //}
-        //[Test]
-        //public void SGK_14_DetailPeriodRight()
-        //{
-        //    //Выбор конец периода
-        //    _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.Button[2]").Click();
-        //    Thread.Sleep(300);
-        //    _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[9]").Click();
-        //    _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]").Click();
-        //}
-        //[Test]
-        //public void SGK_15_BackDetailLicSchet()
-        //{
-        //    //Вернуться к выбранному ЛС
-        //    _driver.FindElementByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]").Click();
-        //    Assert.AreEqual("Лицевой счёт", _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView").GetAttribute("text"));
-        //}
-        //[Test]
-        //public void SGK_16_Otoplenie()
-        //{
-        //    //Изменить отопление
-        //    _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[1]").Click();
-        //    Assert.AreEqual("Отопление", _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.TextView").GetAttribute("text"));
-        //}
-        //[Test]
-        //public void SGK_17_ChangeOtoplenie()
-        //{
-        //    //Удаляю первоначальную цену
-        //    _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText").Clear();
-        //    //Ввод цены
-        //    _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText").SendKeys("1021");
-        //    //Сохранить
-        //    _driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[2]").Click();
-        //}
+        [Test]
+        public void SGK_11_LicSchet()
+        {
+            //_driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[2]").Click();
+            //_driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.FrameLayout[1]").Click();
+            _driver.FindElementByName("Счетчики");
+            _driver.FindElementByName("Счета");
+            Assert.NotNull(_driver.FindElementByName("Оплата"));
+            //Выбрал лицевой счет
+            _driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther").Click();
+            //Assert.AreEqual("Лицевой счет", _driver.FindElementByXPath("//XCUIElmentTypeNavigationBar[@name=\"Лицевой счет\"]").GetAttribute("text"));
+            Assert.NotNull(_driver.FindElementByName("Лицевой счет"));
+        }
+        [Test]
+        public void SGK_12_DetailLicSchet()
+        {
+            //Детализация ЛС
+            _driver.FindElementByXPath("//XCUIElementTypeButton[@name=\"Детализация\"]").Click();
+            //Assert.AreEqual("Детализация", _driver.FindElementByXPath("//XCUIElmentTypeNavigationBar[@name=\"Детализация\"]").GetAttribute("Text"));
+            Assert.NotNull(_driver.FindElementByName("Детализация"));
+        }
+        [Test]
+        public void SGK_13_DetailPeriodLeft()
+        {
+            //Выбор начала периода 
+            //_driver.FindElementByXPath("//XCUIElmentTypeStaticText[@name=\"апрель 2022\"]").Click();
+            _driver.FindElementByName("апрель 2022").Click();
+            Thread.Sleep(300);
+            //_driver.FindElementByXPath("//XCUIElementTypeSheet[@name=\"Начальный месяц\"]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeScrollView[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther[5]//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther").Click();
+            _driver.FindElementByName("август 2019").Click();
+            //_driver.FindElementByXPath("//XCUIElmentTypeButton[@name=\"август 2019\"]").Click();
+            // 
+            //_driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]").Click();
+            Assert.NotNull(_driver.FindElementByName("август 2019"));
+            Thread.Sleep(3000);
+        }
+        [Test]
+        public void SGK_14_DetailPeriodRight()
+        {
+            //Выбор конец периода
+            _driver.FindElementByName("июнь 2022").Click();
+            //_driver.FindElementByXPath("//XCUIElmentTypeButton[@name=\"июнь 2022\"]").Click();
+            Thread.Sleep(300);
+            _driver.FindElementByName("сентябрь 2019").Click();
+            Assert.NotNull(_driver.FindElementByName("сентябрь 2019"));
+            //_driver.FindElementByXPath("//XCUIElmentTypeButton[@name=\"сентябрь 2019\"]").Click();
+            //_driver.FindElementByXPath("//XCUIElementTypeSheet[@name=\"Конечный месяц\"]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeScrollView[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther[9]").Click();
+            //_driver.FindElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]").Click();
+        }
+        [Test]
+        public void SGK_15_BackDetailLicSchet()
+        {
+            //Вернуться к выбранному ЛС
+            //_driver.FindElementByXPath("//XCUIElmentTypeButton[@name=\"Лицевой счет\"]").Click();
+            Thread.Sleep(3000);
+            _driver.Navigate().Back();
+            //Assert.AreEqual("Лицевой счет", _driver.FindElementByXPath("//XCUIElmentTypeNavigationBar[@name=\"Лицевой счет\"]").GetAttribute("name"));
+        }
+        [Test]
+        public void SGK_16_Otoplenie()
+        {
+            //Изменить отопление
+            _driver.FindElementByXPath("(//XCUIElementTypeStaticText[@name=\"Изменить\"])[1]").Click();
+            Assert.NotNull(_driver.FindElementByName("Тепло, руб:"));
+            //_driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeOther[1]").Click();
+            //Assert.AreEqual("Отопление", _driver.FindElementByXPath("(//XCUIElementTypeStaticText[@name=\"Отопление\"])[2]").GetAttribute("name"));
+        }
+        [Test]
+        public void SGK_17_ChangeOtoplenie()
+        {
+            //Удаляю первоначальную цену
+            _driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeScrollView/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeTable/XCUIElementTypeCell/XCUIElementTypeTextField").Clear();
+            //Ввод цены
+            _driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeScrollView/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeTable/XCUIElementTypeCell/XCUIElementTypeTextField").SendKeys("1021");
+            //Сохранить
+            _driver.FindElementByXPath("//XCUIElementTypeButton[@name=\"Сохранить\"]").Click();
+            //Thread.Sleep(1000);
+            //Assert.NotNull(_driver.FindElementByName("1 021,00 руб"));
+        }
         //[Test]
         //public void SGK_18_Oplata()
         //{
