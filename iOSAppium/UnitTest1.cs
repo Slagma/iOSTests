@@ -262,7 +262,7 @@ namespace iOSTests
             //"Передать показания"
             _driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther").Click();
             //Ввод числа
-            _driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeScrollView/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTextField").SendKeys("83");
+            _driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeScrollView/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTextField").SendKeys("85");
             Thread.Sleep(2000);
             //Отправить
             _driver.FindElementByXPath("//XCUIElementTypeButton[@name=\"Отправить\"]").Click();
@@ -399,8 +399,8 @@ namespace iOSTests
             Assert.AreEqual("Елена ", _driver.FindElementByAccessibilityId("Елена ").GetAttribute("name"));
             //Настройка уведомлений
             Thread.Sleep(1000);
-            _driver.FindElementByXPath("//XCUIElementTypeStaticText[@name=\"Настройки уведомлений\"]").Click();
-            Assert.AreEqual("Push-уведомления", _driver.FindElementByXPath("//XCUIElementTypeStaticText[@name=\"Push-уведомления\"]").GetAttribute("name"));
+            _driver.FindElementByName("Настройки уведомлений").Click();
+            Assert.AreEqual("Настройки уведомлений", _driver.FindElementByXPath("//XCUIElementTypeStaticText[@name=\"Настройки уведомлений\"]").GetAttribute("name"));
             //Новости
             _driver.FindElementByXPath("(//XCUIElementTypeSwitch[@name=\"Новости\"])[1]").Click();
             Thread.Sleep(500);
@@ -455,7 +455,7 @@ namespace iOSTests
             //Выход
             _driver.FindElementByXPath("//XCUIElementTypeButton[@name=\"Выход\"]").Click();
             //Закрыть приложение
-            _driver.RemoveApp("СГК Тестовая");
+            //_driver.RemoveApp("СГК Тестовая");
             //_driver.CloseApp();
             //_driver.Navigate().Back();
         }
