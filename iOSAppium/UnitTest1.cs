@@ -400,6 +400,7 @@ namespace iOSTests
             //Настройка уведомлений
             Thread.Sleep(1000);
             _driver.FindElementByName("Настройки уведомлений").Click();
+            _driver.FindElementByName("Настройки уведомлений").Click();
             Assert.AreEqual("Настройки уведомлений", _driver.FindElementByXPath("//XCUIElementTypeStaticText[@name=\"Настройки уведомлений\"]").GetAttribute("name"));
             //Новости
             _driver.FindElementByXPath("(//XCUIElementTypeSwitch[@name=\"Новости\"])[1]").Click();
