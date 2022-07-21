@@ -24,11 +24,12 @@ namespace iOSTests
                 driverOption.AddAdditionalCapability(MobileCapabilityType.DeviceName, "iPhone 8");
                 driverOption.AddAdditionalCapability(MobileCapabilityType.PlatformName, "15.4");
                 driverOption.AddAdditionalCapability(MobileCapabilityType.AutomationName, "XCUITest");
-                //driverOption.AddAdditionalCapability(MobileCapabilityType.App, "/Users/admin/Donwloads/SGC-test.apk");
+                driverOption.AddAdditionalCapability(MobileCapabilityType.App, "/Users/admin/Library/Developer/Xcode/DerivedData/Sibeco-fgqeesjjrzstgwekcgmossjsdyca/Bild/Products/Debug-iphonesimulator/SGC.app"); //"/Users/admin/Donwloads/SGC-test.ipa");
+                driverOption.AddAdditionalCapability(MobileCapabilityType.FullReset, true);
                 //driverOption.AddAdditionalCapability(MobileCapabilityType.App, @"D:\Donwloads\SGC-test.apk");
 
 
-                _driver = new IOSDriver<IOSElement>(new Uri("http://localhost:4723/wd/hub"), driverOption, TimeSpan.FromSeconds(400));
+                _driver = new IOSDriver<IOSElement>(new Uri("http://localhost:4723/wd/hub"), driverOption, TimeSpan.FromSeconds(300));
                 //_driver = new AndroidDriver<AndroidElement>(new Uri("http://selenosis.epp.sibgenco.local/wd/hu"), driverOption, TimeSpan.FromSeconds(400));
 
                 _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
@@ -39,9 +40,9 @@ namespace iOSTests
         public void SGK_10_Login()
         {
             //Открыть приложение СГК
-            _driver.FindElementByAccessibilityId("СГК Тестовая").Click();
+            //_driver.FindElementByAccessibilityId("СГК Тестовая").Click();
             //Выбрать город
-            Thread.Sleep(1500);
+            Thread.Sleep(10000);
             _driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeButton[1]").Click();
             //Выбрать Красноярск
             _driver.FindElementByXPath("//XCUIElementTypeButton[@name=\"Красноярск\"]").Click();
