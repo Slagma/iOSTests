@@ -24,7 +24,7 @@ namespace iOSTests
                 driverOption.AddAdditionalCapability(MobileCapabilityType.DeviceName, "iPhone 8");
                 driverOption.AddAdditionalCapability(MobileCapabilityType.PlatformName, "15.4");
                 driverOption.AddAdditionalCapability(MobileCapabilityType.AutomationName, "XCUITest");
-                driverOption.AddAdditionalCapability(MobileCapabilityType.App, "/Users/admin/Library/Developer/Xcode/DerivedData/Sibeco-fgqeesjjrzstgwekcgmossjsdyca/Bild/Products/Debug-iphonesimulator/SGC.app"); //"/Users/admin/Donwloads/SGC-test.ipa");
+                driverOption.AddAdditionalCapability(MobileCapabilityType.App, "/Users/admin/Library/Developer/Xcode/DerivedData/Sibeco-fgqeesjjrzstgwekcgmossjsdyca/Build/Products/Debug-iphonesimulator/SGC.app"); //"/Users/admin/Donwloads/SGC-test.ipa");
                 driverOption.AddAdditionalCapability(MobileCapabilityType.FullReset, true);
                 //driverOption.AddAdditionalCapability(MobileCapabilityType.App, @"D:\Donwloads\SGC-test.apk");
 
@@ -42,7 +42,8 @@ namespace iOSTests
             //Открыть приложение СГК
             //_driver.FindElementByAccessibilityId("СГК Тестовая").Click();
             //Выбрать город
-            Thread.Sleep(10000);
+            Thread.Sleep(5000);
+            _driver.FindElementByAccessibilityId("Allow").Click();
             _driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeButton[1]").Click();
             //Выбрать Красноярск
             _driver.FindElementByXPath("//XCUIElementTypeButton[@name=\"Красноярск\"]").Click();
@@ -261,7 +262,7 @@ namespace iOSTests
             //"Передать показания"
             _driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther").Click();
             //Ввод числа
-            _driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeScrollView/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTextField").SendKeys("136");
+            _driver.FindElementByXPath("//XCUIElementTypeApplication[@name=\"СГК Тестовая\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeScrollView/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTextField").SendKeys("83");
             Thread.Sleep(2000);
             //Отправить
             _driver.FindElementByXPath("//XCUIElementTypeButton[@name=\"Отправить\"]").Click();
@@ -454,8 +455,9 @@ namespace iOSTests
             //Выход
             _driver.FindElementByXPath("//XCUIElementTypeButton[@name=\"Выход\"]").Click();
             //Закрыть приложение
-            _driver.CloseApp();
-            _driver.Navigate().Back();
+            _driver.RemoveApp("СГК Тестовая");
+            //_driver.CloseApp();
+            //_driver.Navigate().Back();
         }
 
     }
