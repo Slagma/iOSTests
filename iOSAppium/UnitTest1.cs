@@ -24,7 +24,8 @@ namespace iOSTests
                 driverOption.AddAdditionalCapability(MobileCapabilityType.DeviceName, "iPhone 8");
                 driverOption.AddAdditionalCapability(MobileCapabilityType.PlatformName, "15.4");
                 driverOption.AddAdditionalCapability(MobileCapabilityType.AutomationName, "XCUITest");
-                driverOption.AddAdditionalCapability(MobileCapabilityType.App, "/Users/admin/Library/Developer/Xcode/DerivedData/Sibeco-fgqeesjjrzstgwekcgmossjsdyca/Build/Products/Debug-iphonesimulator/SGC.app"); //"/Users/admin/Donwloads/SGC-test.ipa");
+                //driverOption.AddAdditionalCapability(MobileCapabilityType.App, "/Users/admin/Library/Developer/Xcode/DerivedData/Sibeco-fgqeesjjrzstgwekcgmossjsdyca/Build/Products/Debug-iphonesimulator/SGC.app"); //"/Users/admin/Donwloads/SGC-test.ipa");
+                driverOption.AddAdditionalCapability(MobileCapabilityType.App, "/Users/admin/SeleniumTest/TestBuild/SGC.app");
                 driverOption.AddAdditionalCapability(MobileCapabilityType.FullReset, true);
                 //driverOption.AddAdditionalCapability(MobileCapabilityType.App, @"D:\Donwloads\SGC-test.apk");
 
